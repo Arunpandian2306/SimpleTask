@@ -32,11 +32,13 @@ const UserModel = sequelize.define(
     },
   },
   {
-    timestamps: true,
-    tableName: "users",
+    timestamps: true,     
+    underscored: true,     
+    tableName: "users",    
   }
 );
 
+// Hash the password before saving
 UserModel.beforeCreate(async (user) => {
   const salt = await bcrypt.genSalt(10);
   user.password_hash = await bcrypt.hash(user.password_hash, salt);
