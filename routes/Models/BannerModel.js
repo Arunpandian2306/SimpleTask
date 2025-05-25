@@ -1,27 +1,27 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../DBConfig/Connection.js";
-const CategoryModel = sequelize.define(
-  "Category",
+
+const BannerModel = sequelize.define(
+  "Banner",
   {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
     },
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: true,
+    image: {
+      type: DataTypes.TEXT("long"),
+      allowNull: false,
     },
   },
   {
-    tableName: "categories",
+    tableName: "banners",
     timestamps: true,
   }
 );
 
-export default CategoryModel;
+export default BannerModel;

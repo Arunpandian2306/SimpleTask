@@ -57,7 +57,7 @@ export const register = async (req, res) => {
     });
   } catch (error) {
     console.error("Error registering user:", error);
-    res.status(500).json({ error: "An error occurred while registering user" });
+    res.status(422).json({ error: "An error occurred while registering user" });
   }
 };
 
@@ -113,7 +113,7 @@ export const login = async (req, res) => {
     });
   } catch (error) {
     console.error("Error logging in:", error);
-    res.status(500).json({ error: "An error occurred while logging in" });
+    res.status(422).json({ error: "An error occurred while logging in" });
   }
 };
 export const createAdmin = async (req, res) => {
@@ -160,6 +160,6 @@ export const createAdmin = async (req, res) => {
     });
   } catch (error) {
     console.error("Error registering user:", error);
-    res.status(500).json({ error: "An error occurred while registering user" });
+    res.status(422).json({ error: "An error occurred while registering user" });
   }
 };

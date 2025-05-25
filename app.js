@@ -10,7 +10,7 @@ import logger from "morgan";
 import loginRouter from "./routes/Controller/AuthController.js";
 // import ProductRouter from "./routes/Controller/Product.js";
 import CatagoryRouter from "./routes/Controller/CategoryController.js";
-// import CartRouter from "./routes/Controller/Cart.js";
+import BannerRouter from "./routes/Controller/BannerController.js";
 // import OrderRouter from "./routes/Controller/Order.js";
 // import protectedRoutes from "./routes/Controller/protectedRoutes.js";
 // import authRouter from './routes/Controller/protectedRoutes';
@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/auth", loginRouter);
 // app.use("/product", ProductRouter);
 app.use("/catagory", CatagoryRouter);
-// app.use("/cart", CartRouter);
+app.use("/banner", BannerRouter);
 // app.use("/order", OrderRouter);
 // app.use("/admin", protectedRoutes);
 // app.use('/authRouter', authRouter);
@@ -53,7 +53,7 @@ app.use((err, req, res, next) => {
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
+  res.status(err.status || 422);
   res.render("error");
 });
 

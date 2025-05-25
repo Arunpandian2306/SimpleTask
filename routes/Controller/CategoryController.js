@@ -1,5 +1,8 @@
 import express from "express";
-import { authorizeAdmin,authenticateUser } from "../Middleware/AuthenticateJWT.js";
+import {
+  authorizeAdmin,
+  authenticateUser,
+} from "../Middleware/AuthenticateJWT.js";
 import {
   createCategory,
   updateCategory,

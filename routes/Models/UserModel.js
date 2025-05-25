@@ -32,9 +32,9 @@ const UserModel = sequelize.define(
     },
   },
   {
-    timestamps: true,     
-    underscored: true,     
-    tableName: "users",    
+    timestamps: true,
+    underscored: true,
+    tableName: "users",
   }
 );
 
