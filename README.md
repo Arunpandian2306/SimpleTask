@@ -30,7 +30,7 @@ npm install
 
 ### Install postgress and Pgadmin
 
-### Create Data base as : ecommerce
+### Create Database as : ecommerce
 
 ### Restore the dump in path : router/Dump/Ecommerce.sql
 
