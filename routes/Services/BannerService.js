@@ -1,6 +1,5 @@
 import BannerModel from "../Models/BannerModel.js";
 
-// Create banner
 export const uploadBanner = async (req, res) => {
   try {
     const { title, image } = req.body;
@@ -16,7 +15,6 @@ export const uploadBanner = async (req, res) => {
   }
 };
 
-// Get all banner IDs and titles
 export const getAllBanners = async (req, res) => {
   try {
     const banners = await BannerModel.findAll({
@@ -30,7 +28,6 @@ export const getAllBanners = async (req, res) => {
   }
 };
 
-// Get only image by ID
 export const getBannerImageById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -40,7 +37,6 @@ export const getBannerImageById = async (req, res) => {
       return res.status(404).json({ message: "Banner not found" });
     }
 
-    // Detect MIME type from base64 (if stored with prefix)
     const base64Data = banner.image;
     const matches = base64Data.match(/^data:(.+);base64,(.+)$/);
 
